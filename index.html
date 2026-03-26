@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crypt Points Tracker (15,000 weekly goal)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Crypt Points Tracker</h1>
+    <p class="subtitle">Weekly goal: <strong>15,000</strong> points</p>
+  </header>
+
+  <main class="container">
+    <section class="summary" aria-label="Points summary">
+      <div class="card">
+        <div class="label">Total points</div>
+        <div id="totalPoints" class="value">0</div>
+      </div>
+      <div class="card">
+        <div class="label">Points missing</div>
+        <div id="pointsMissing" class="value">15000</div>
+      </div>
+      <div class="card">
+        <div class="label">Goal</div>
+        <div id="goalPoints" class="value">15000</div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Controls">
+      <button id="resetBtn" class="btn-secondary" type="button">Reset quantities</button>
+      <label class="goal">
+        Goal
+        <input id="goalInput" type="number" min="0" step="1" value="15000" />
+      </label>
+      <button id="exportBtn" class="btn" type="button">Export CSV</button>
+    </section>
+
+    <section aria-label="Items">
+      <table class="table" aria-describedby="tableHelp">
+        <thead>
+          <tr>
+            <th>Chest Type</th>
+            <th class="num">Unit points</th>
+            <th class="qty">Quantity made</th>
+            <th class="num">Total points per item</th>
+          </tr>
+        </thead>
+        <tbody id="itemsBody"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="tfoot-label">Total points</td>
+            <td class="num"><span id="totalPointsFooter">0</span></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="tfoot-label">Total points to be made</td>
+            <td class="num"><span id="pointsMissingFooter">15000</span></td>
+          </tr>
+        </tfoot>
+      </table>
+      <p id="tableHelp" class="help">Use + and - to adjust quantities. Values are stored locally in your browser.</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>Works offline. No data is sent anywhere.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+``
